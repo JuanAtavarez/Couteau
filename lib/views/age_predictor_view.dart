@@ -38,13 +38,13 @@ class _AgePredictorViewState extends State<AgePredictorView> {
           _imageUrl = null;
         } else if (age < 25) { // Rango para "joven"
           _ageMessage = '¡Eres joven!';
-          _imageUrl = 'https://picsum.photos/id/1011/400/300'; // Imagen de persona joven (ejemplo)
+          _imageUrl = 'https://images.pexels.com/photos/35537/child-children-girl-happy.jpg'; 
         } else if (age >= 25 && age < 60) { // Rango para "adulto"
           _ageMessage = 'Eres un adulto.';
-          _imageUrl = 'https://picsum.photos/id/1025/400/300'; // Imagen de persona adulta (ejemplo)
+          _imageUrl = 'https://images.pexels.com/photos/4046512/pexels-photo-4046512.jpeg'; 
         } else { // Rango para "anciano"
           _ageMessage = 'Eres un anciano.';
-          _imageUrl = 'https://picsum.photos/id/1062/400/300'; // Imagen de persona anciana (ejemplo)
+          _imageUrl = 'https://images.pexels.com/photos/35183/people-homeless-man-male.jpg'; 
         }
       });
     } catch (e) {
@@ -91,13 +91,13 @@ class _AgePredictorViewState extends State<AgePredictorView> {
               textAlign: TextAlign.center,
             ),
             const SizedBox(height: 20),
-            if (_imageUrl != null) // Solo muestra la imagen si hay URL
+            if (_imageUrl != null) 
               ClipRRect( // Para bordes redondeados en la imagen
                 borderRadius: BorderRadius.circular(10),
                 child: CachedNetworkImage(
                   imageUrl: _imageUrl!,
-                  placeholder: (context, url) => const CircularProgressIndicator(), // Indicador de carga
-                  errorWidget: (context, url, error) => const Icon(Icons.error), // Icono si la imagen falla
+                  placeholder: (context, url) => const CircularProgressIndicator(), 
+                  errorWidget: (context, url, error) => const Icon(Icons.error),
                   width: double.infinity,
                   height: 200,
                   fit: BoxFit.cover,
